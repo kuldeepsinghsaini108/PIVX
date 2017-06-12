@@ -527,7 +527,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 
     // if we don't have at least 6 signatures on a payee, approve whichever is the longest chain
     if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED){
-        LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid: Mrs-X: this is a possible bug!\n");
+        LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid: Mrs-X: nMaxSignatures(=%d) < MNPAYMENTS_SIGNATURES_REQUIRED(=6): this is a possible bug!\n", nMaxSignatures);
         LogPrintf("XX42----->                                             The vout-test must still be executed\n");
         return true;
     }
