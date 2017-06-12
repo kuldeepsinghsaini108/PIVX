@@ -1669,9 +1669,17 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
         int64_t mNodeCoins = mnodeman.size() * 10000 * COIN;
 
+        LogPrintf("XX42-----> GetMasternodePayment(): nHeight=%d, blockValue=%ld, nMasternodeCount=%d, moneysupply=%s, nodecoins=%s \n", nHeight, blockValue, nMasternodeCount, FormatMoney(nMoneySupply).c_str(),
+                FormatMoney(mNodeCoins).c_str());
+        
         //if a mn count is inserted into the function we are looking for a specific result for a masternode count
-        if(nMasternodeCount)
+        if(nMasternodeCount){
+            LogPrintf("XX42-----> mNodeCoins was changed by nMasternodeCount (Drift algorithm)\n");
             mNodeCoins = nMasternodeCount * 10000 * COIN;
+        }
+
+        LogPrintf("XX42-----> GetMasternodePayment(): moneysupply=%s, nodecoins=%s \n", FormatMoney(nMoneySupply).c_str(),
+                FormatMoney(mNodeCoins).c_str());
 
         if (fDebug)
             LogPrintf("GetMasternodePayment(): moneysupply=%s, nodecoins=%s \n", FormatMoney(nMoneySupply).c_str(),
@@ -1890,6 +1898,7 @@ int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCou
         }
     }
 
+    LogPrintf("XX42-----> GetMasternodePayment(): Result: ret=%ld\n", ret);
     return ret;
 }
 

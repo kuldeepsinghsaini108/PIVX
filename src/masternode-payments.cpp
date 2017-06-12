@@ -515,13 +515,22 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
     //for mnPayment >= required, so it only makes sense to check the max node count allowed.
     CAmount requiredMasternodePayment = GetMasternodePayment(nBlockHeight, nReward, mnodeman.size() + Params().MasternodeCountDrift());
 
+    LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid nBlockHeight=%d, nReward=%ld, mnodeman.size()=%d, MasternodeCountDrift=%d, nMaxSignatures=%d\n", nBlockHeight, nReward, mnodeman.size(), Params().MasternodeCountDrift(), nMaxSignatures);
+
+
     //require at least 6 signatures
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments)
-        if (payee.nVotes >= nMaxSignatures && payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED)
+        if (payee.nVotes >= nMaxSignatures && payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED){
+            LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid nMaxSignatures changed from: %d to %d\n", nMaxSignatures, payee.nVotes);
             nMaxSignatures = payee.nVotes;
+        }
 
     // if we don't have at least 6 signatures on a payee, approve whichever is the longest chain
-    if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED) return true;
+    if (nMaxSignatures < MNPAYMENTS_SIGNATURES_REQUIRED){
+        LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid: Mrs-X: this is a possible bug!\n");
+        LogPrintf("XX42----->                                             The vout-test must still be executed\n");
+        return true;
+    }
 
     BOOST_FOREACH (CMasternodePayee& payee, vecPayments) {
         bool found = false;
@@ -534,7 +543,13 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
             }
         }
 
+        if(found)
+            LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid: found vout with out.nValue >= requiredMasternodePayment\n");
+        
         if (payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED) {
+
+            LogPrintf("XX42-----> CMasternodeBlockPayees::IsTransactionValid: payee.nVotes >= MNPAYMENTS_SIGNATURES_REQUIRED (6)\n");
+
             if (found) return true;
 
             CTxDestination address1;
