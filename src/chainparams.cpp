@@ -59,7 +59,7 @@ static const Checkpoints::CCheckpointData data = {
     1500984600 // * UNIX timestamp of last checkpoint block
     // 1157185,     * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-     2000        // * estimated number of transactions per day after checkpoint
+     2000,        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -67,8 +67,8 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1500984600
-    //0,
-    250
+    0,
+    250,
    };
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -76,8 +76,8 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1500984600
-    //0,
-    100
+    0,
+    100,
 	};
 
 class CMainParams : public CChainParams
