@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/BoomCoin_bg.qm</file>
+        <file alias="de">locale/BoomCoin_de.qm</file>
+        <file alias="en">locale/BoomCoin_en.qm</file>
+        <file alias="es">locale/BoomCoin_es.qm</file>
+        <file alias="fi">locale/BoomCoin_fi.qm</file>
+        <file alias="fr">locale/BoomCoin_fr.qm</file>
+        <file alias="it">locale/BoomCoin_it.qm</file>
+        <file alias="ja">locale/BoomCoin_ja.qm</file>
+        <file alias="pl">locale/BoomCoin_pl.qm</file>
+        <file alias="pt">locale/BoomCoin_pt.qm</file>
+        <file alias="ru">locale/BoomCoin_ru.qm</file>
+        <file alias="sk">locale/BoomCoin_sk.qm</file>
+        <file alias="sv">locale/BoomCoin_sv.qm</file>
+        <file alias="vi">locale/BoomCoin_vi.qm</file>
+        <file alias="zh_CN">locale/BoomCoin_zh_CN.qm</file>
+        <file alias="zh_TW">locale/BoomCoin_zh_TW.qm</file>
+    </qresource>
+</RCC>
