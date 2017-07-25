@@ -1,19 +1,19 @@
 [Unit]
-Description=PIVX's distributed currency daemon
+Description=BoomCoin's distributed currency daemon
 After=network.target
 
 [Service]
-User=pivx
-Group=pivx
+User=BoomCoin
+Group=BoomCoin
 
 Type=forking
-PIDFile=/var/lib/pivxd/pivxd.pid
+PIDFile=/var/lib/BoomCoind/BoomCoind.pid
 
-ExecStart=/usr/bin/pivxd -daemon -pid=/var/lib/pivxd/pivxd.pid \
-          -conf=/etc/pivx/pivx.conf -datadir=/var/lib/pivxd
+ExecStart=/usr/bin/BoomCoind -daemon -pid=/var/lib/BoomCoind/BoomCoind.pid \
+          -conf=/etc/BoomCoin/BoomCoin.conf -datadir=/var/lib/BoomCoind
 
-ExecStop=-/usr/bin/pivx-cli -conf=/etc/pivx/pivx.conf \
-         -datadir=/var/lib/pivxd stop
+ExecStop=-/usr/bin/BoomCoin-cli -conf=/etc/BoomCoin/BoomCoin.conf \
+         -datadir=/var/lib/BoomCoind stop
 
 Restart=always
 PrivateTmp=true

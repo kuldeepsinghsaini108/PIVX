@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/obfuscation-relay.h \
            src/obfuscation.h \
-           src/pivx-config.h \
+           src/BoomCoin-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/pivx-config.h \
+           src/config/BoomCoin-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -333,7 +333,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/pivx.moc \
+           src/qt/BoomCoin.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -374,9 +374,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/obfuscation-relay.cpp \
            src/obfuscation.cpp \
-           src/pivx-cli.cpp \
-           src/pivx-tx.cpp \
-           src/pivx.cpp \
+           src/BoomCoin-cli.cpp \
+           src/BoomCoin-tx.cpp \
+           src/BoomCoin.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -471,8 +471,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/pivx.cpp \
-           src/qt/pivxstrings.cpp \
+           src/qt/BoomCoin.cpp \
+           src/qt/BoomCoinstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -550,7 +550,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_pivx.cpp \
+           src/test/test_BoomCoin.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -641,21 +641,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/pivx.qrc src/qt/pivx_locale.qrc
+RESOURCES += src/qt/BoomCoin.qrc src/qt/BoomCoin_locale.qrc
 
-TRANSLATIONS += src/qt/locale/pivx_bg.ts \
-                src/qt/locale/pivx_de.ts \
-                src/qt/locale/pivx_en.ts \
-                src/qt/locale/pivx_es.ts \
-                src/qt/locale/pivx_fi.ts \
-                src/qt/locale/pivx_fr.ts \
-                src/qt/locale/pivx_it.ts \
-                src/qt/locale/pivx_ja.ts \
-                src/qt/locale/pivx_pl.ts \
-                src/qt/locale/pivx_pt.ts \
-                src/qt/locale/pivx_ru.ts \
-                src/qt/locale/pivx_sk.ts \
-                src/qt/locale/pivx_sv.ts \
-                src/qt/locale/pivx_vi.ts \
-                src/qt/locale/pivx_zh_CN.ts \
-                src/qt/locale/pivx_zh_TW.ts
+TRANSLATIONS += src/qt/locale/BoomCoin_bg.ts \
+                src/qt/locale/BoomCoin_de.ts \
+                src/qt/locale/BoomCoin_en.ts \
+                src/qt/locale/BoomCoin_es.ts \
+                src/qt/locale/BoomCoin_fi.ts \
+                src/qt/locale/BoomCoin_fr.ts \
+                src/qt/locale/BoomCoin_it.ts \
+                src/qt/locale/BoomCoin_ja.ts \
+                src/qt/locale/BoomCoin_pl.ts \
+                src/qt/locale/BoomCoin_pt.ts \
+                src/qt/locale/BoomCoin_ru.ts \
+                src/qt/locale/BoomCoin_sk.ts \
+                src/qt/locale/BoomCoin_sv.ts \
+                src/qt/locale/BoomCoin_vi.ts \
+                src/qt/locale/BoomCoin_zh_CN.ts \
+                src/qt/locale/BoomCoin_zh_TW.ts
