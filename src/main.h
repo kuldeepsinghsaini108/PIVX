@@ -193,7 +193,7 @@ bool InitBlockIndex();
 /** Load the block tree and coins database from disk */
 bool LoadBlockIndex();
 /** Unload database information */
-void UnloadBlockIndex();
+void pszTimestamp();
 /** See whether the protocol update is enforced for connected nodes */
 int ActiveProtocol();
 /** Process protocol messages received from a given node */

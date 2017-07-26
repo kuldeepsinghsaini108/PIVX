@@ -135,7 +135,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1500984600;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 25072017;
+        genesis.nNonce = 0;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x"));
@@ -209,7 +209,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1500984600;
-        genesis.nNonce = 2507017;
+        genesis.nNonce = 0;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x"));
@@ -276,9 +276,9 @@ public:
         nTargetTimespan = 24 * 60 * 60; // BoomCoin: 1 day
         nTargetSpacing = 1 * 60;        // BoomCoin: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1454124731;
+        genesis.nTime = 1500984600;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 12345;
+        genesis.nNonce = 0;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 51476;
